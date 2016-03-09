@@ -1,6 +1,6 @@
 {
   "name": "uniquify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Generate UUIDs",
   "main": "lib/uuid.js",
   "author": "Matthew Grill <matt@fourkitchens.com> (http://fourkitchens.com/team/matt-grill/)",

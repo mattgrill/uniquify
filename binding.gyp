@@ -4,7 +4,8 @@
       "target_name": "uniquify",
       "sources": [
         "src/main.cc",
-        "src/generate.cc"
+        "src/generate.cc",
+        "src/generateSync.cc"
       ],
       "include_dirs": ["<!(node -e \"require('nan')\")"],
       "conditions": [

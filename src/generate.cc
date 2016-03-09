@@ -43,10 +43,6 @@ class UUIDWorker : public AsyncWorker {
     Local<Object> obj = Object::New(isolate_);
     obj->Set(String::NewFromUtf8(isolate_, "uuid"),
                             String::NewFromUtf8(isolate_, uuid.str().c_str()));
-    obj->Set(String::NewFromUtf8(isolate_, "base62"),
-                            String::NewFromUtf8(isolate_, uuid.base62().c_str()));
-    obj->Set(String::NewFromUtf8(isolate_, "uuidPretty"),
-                            String::NewFromUtf8(isolate_, uuid.pretty().c_str()));
 
     Local<Value> argv[] = {
       Null(),

@@ -14,6 +14,9 @@ using Nan::Set;
 NAN_MODULE_INIT(InitAll) {
   Set(target, New<String>("generate").ToLocalChecked(),
     GetFunction(New<FunctionTemplate>(Generate)).ToLocalChecked());
+
+  Set(target, New<String>("generateSync").ToLocalChecked(),
+    GetFunction(New<FunctionTemplate>(GenerateSync)).ToLocalChecked());
 }
 
 NODE_MODULE(uniquify, InitAll)
