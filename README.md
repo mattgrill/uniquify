@@ -7,9 +7,7 @@ _Generate a UUID with C++_
 ```javascript
 uniquify.generate(4, (err, result) => {
   /*
-  {
-    uuid: '3c87152c-64f4-4a33-924e-6cf31b606ae3',
-  }
+  3c87152c-64f4-4a33-924e-6cf31b606ae3
   */
 });
 ```
@@ -23,9 +21,7 @@ uniquify.generate(4, (err, result) => {
 ```javascript
 uniquify.generateSync(4);
 /*
-{
-  uuid: '3c87152c-64f4-4a33-924e-6cf31b606ae3',
-}
+3c87152c-64f4-4a33-924e-6cf31b606ae3
 */
 
 ```

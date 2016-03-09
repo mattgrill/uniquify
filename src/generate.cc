@@ -37,16 +37,11 @@ class UUIDWorker : public AsyncWorker {
   // this function will be run inside the main event loop
   // so it is safe to use V8 again
   void HandleOKCallback () {
-    v8::Isolate* isolate_ = v8::Isolate::GetCurrent();
-    v8::Isolate::Scope isolate_scope(isolate_);
-
-    Local<Object> obj = Object::New(isolate_);
-    obj->Set(String::NewFromUtf8(isolate_, "uuid"),
-                            String::NewFromUtf8(isolate_, uuid.str().c_str()));
+    Local<v8::String> result = Nan::MaybeLocal<v8::String>(Nan::New<String>(uuid.str())).ToLocalChecked();
 
     Local<Value> argv[] = {
       Null(),
-      obj
+      result
     };
 
     callback->Call(2, argv);

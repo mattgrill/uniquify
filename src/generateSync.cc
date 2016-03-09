@@ -26,12 +26,7 @@ NAN_METHOD(GenerateSync) {
     break;
   }
 
-  v8::Isolate* isolate_ = v8::Isolate::GetCurrent();
-  v8::Isolate::Scope isolate_scope(isolate_);
+  Local<v8::String> result = Nan::MaybeLocal<v8::String>(Nan::New<String>(uuid.str())).ToLocalChecked();
 
-  Local<Object> obj = Object::New(isolate_);
-  obj->Set(String::NewFromUtf8(isolate_, "uuid"),
-                          String::NewFromUtf8(isolate_, uuid.str().c_str()));
-
-  info.GetReturnValue().Set(obj);
+  info.GetReturnValue().Set(result);
 }
